@@ -162,68 +162,61 @@ int main(void){
 			return 0;
 			
 		}	else if (escolha == 7){
-			printf("Vazio");
+			int fat, n;
+			
+			printf("Digite um número, e o programa retornará o fatorial dele: ");
+			scanf("%d", &n) ;
+			
+			  for(fat = 1; n > 1; n = n - 1)
+			  {
+			      fat = fat * n;
+			  }
+			
+			  printf("\n%d", fat);
+			  
 			return 0;
 			
 		}	else if (escolha == 8){
-			printf("Vazio");
+			 int num, i, resultado = 0;
+			 
+			 printf("Digite um número: ");
+			 scanf("%d", &num);
+			 
+			 for (i = 2; i <= num / 2; i++) {
+			    if (num % i == 0) {
+			       resultado++;
+			       break;
+			    }
+			 }
+			 
+			 if (resultado == 0)
+			    printf("%d é um número primo\n", num);
+			 else
+			    printf("%d não é um número primo\n", num);
 			return 0;
-			
 		}	else if (escolha == 9){
-			int numeroEntrada, q, resto, i;
-			char nome[61] = "Enoque";
-			char hexa[10] = {'\0'}, getInt[10] = {'\0'};
-		
-			numeroEntrada = 1920026753;
-			
-			
-			do{
-				q = numeroEntrada / 16;
-				resto = numeroEntrada % 16;
-				numeroEntrada /= 16;
-				
-				switch(resto){
-					case 10:
-						strcat(hexa, "A");
-					break;
-					case 11:
-						strcat(hexa, "B");
-					break;
-					case 12:
-						strcat(hexa, "C");
-					break;
-					case 13:
-						strcat(hexa, "D");
-					break;
-					case 14:
-						strcat(hexa, "E");
-					break;
-					case 15:
-						strcat(hexa, "F");
-					break;
-					case 16:
-						strcat(hexa, "G");
-					break;
-					default:
-						sprintf(getInt, "%i", resto);
-						strcat(hexa, getInt);
-				}
-			}while(q != 0);
-			
-				printf("Nome: %s", nome);
-				printf("\nMatrícula em HexaDecimal: ");
-			for(i=strlen(hexa); i >= 0; i--){
-				
-				printf("%c", hexa[i]);
+			printf("Este programa lhe pede N para que esse número seja aplicado a sequência de fibonacci");
+			long int x, y, result, entrada;
+			x = 0;
+			y = 1;
+			// result = x + y  
+			// x = y;
+			// y = result
+			printf("\nDigite o número: ");
+			scanf("%d", &entrada);
+			for(int i=0; i<=entrada; i++){
+				result = x + y;
+				x = y;
+				y = result;
+				printf(" %d ", x);
 			}
-			
 			return 0;
-			
+						
 		}	else if (escolha == 0){
 			printf("\nPrograma encerrado com sucesso!\n");
 				getch();
 				return 0;
-	 	}	else if (escolha >= 10 || escolha <= 0){
+	 	} else if (escolha >= 10 || escolha <= 0){
 	 		printf("\nOpção inválida. Digite um número correspondente ao menu: \n");
 	 			printf("[1] - Exibir mensagem de ânimo. \n");
 				printf("[2] - Exibir mensagem de tristeza. \n");
@@ -239,6 +232,6 @@ int main(void){
 					scanf("%d", &escolha);
 		 }
 	}	
-	
+ 
 	return 0;
 }
